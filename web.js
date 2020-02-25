@@ -2,8 +2,6 @@ var express = require("express"),
     io      = require("socket.io"),
     app     = express.createServer(express.logger())
 
-app.use(express.static(__dirname + "/public"))
-
 var socket = io.listen(app)
 socket.configure(function () { 
   socket.set("transports", ["xhr-polling"]) 
